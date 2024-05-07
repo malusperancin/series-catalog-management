@@ -1,0 +1,3 @@
+/home/mariasm/CLionProjects/ProjetoPOO/cmake-build-debug/CMakeFiles/ProjetoPOO.dir
+/home/mariasm/CLionProjects/ProjetoPOO/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mariasm/CLionProjects/ProjetoPOO/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,15 @@
+/snap/clion/275/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=/snap/clion/275/bin/ninja/linux/x64/ninja g++ main.cpp -o output -L/usr/include/mariadb/mysql -lmariadbclient && ./output -G Ninja -S /home/mariasm/CLionProjects/ProjetoPOO -B /home/mariasm/CLionProjects/ProjetoPOO/cmake-build-run
+CMake Warning:
+  Ignoring extra path from command line:
+
+   "/home/mariasm/CLionProjects/ProjetoPOO/cmake-build-run/g++"
+
+
+CMake Warning:
+  Ignoring extra path from command line:
+
+   "./output"
+
+
+CMake Error: Unknown argument -lmariadbclient
+CMake Error: Run 'cmake --help' for all supported options.

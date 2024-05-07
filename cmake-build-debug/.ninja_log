@@ -1,0 +1,7 @@
+# ninja log v5
+296	349	1715034852835303873	ProjetoPOO	c205550a1aee8bf3
+1	238	1715039555391393587	CMakeFiles/ProjetoPOO.dir/main.cpp.o	7539cd75afafa821
+1	355	1715039555507402819	CMakeFiles/ProjetoPOO.dir/Controller.cpp.o	4da96dde84a1f276
+2	356	1715039555507402819	CMakeFiles/ProjetoPOO.dir/Menu.cpp.o	da3bb8786e4ade32
+0	17	1715040239241811759	build.ninja	fb15c4c3179b405c
+2	332	1715039555483400909	CMakeFiles/ProjetoPOO.dir/Series.cpp.o	bb50a010fd2a741b
