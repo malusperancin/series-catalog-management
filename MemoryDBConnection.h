@@ -2,7 +2,6 @@
 #define MEMORYDBCONNECTION_H_
 
 #include <vector>
-
 #include "Series.h"
 
 using namespace std;

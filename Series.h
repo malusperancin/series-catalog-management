@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+#ifndef SERIES_H
+#define SERIES_H
+
 class Series{
 private:
 	int id;
@@ -37,3 +40,5 @@ public:
 	void setNetwork(string network);
 	void setRating(int rating);
 };
+
+#endif
