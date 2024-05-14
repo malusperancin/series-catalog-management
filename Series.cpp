@@ -1,13 +1,15 @@
 #include "Series.h"
 
-Series::Series(string name, int releaseYear, int numSeasons, vector<string> mainActors, vector<string> mainCharacters, string streaming, int score) {
+Series::Series(int id, string name, int releaseYear, int numSeasons, int episodeCount, string mainActors, string mainCharacters, string network, int rating) {
+	this->id = id;
 	this->name = name;
 	this->releaseYear = releaseYear;
 	this->numSeasons = numSeasons;
+	this->episodeCount = episodeCount;
 	this->mainActors = mainActors;
 	this->mainCharacters = mainCharacters;
-	this->streaming = streaming;
-	this->score = score;
+	this->network = network;
+	this->rating = rating;
 }
 
 Series::~Series() {
@@ -18,6 +20,10 @@ string Series::getName() {
 	return this->name;
 }
 
+int Series::getId() {
+	return this->id;
+}
+
 int Series::getReleaseYear() {
 	return this->releaseYear;
 }
@@ -26,24 +32,32 @@ int Series::getNumSeasons() {
 	return this->numSeasons;
 }
 
-vector<string> Series::getMainActors() {
+int Series::getEpisodeCount() {
+	return this->episodeCount;
+}
+
+string Series::getMainActors() {
 	return this->mainActors;
 }
 
-vector<string> Series::getMainCharacters() {
+string Series::getMainCharacters() {
 	return this->mainCharacters;
 }
 
-string Series::getStreaming() {
-	return this->streaming;
+string Series::getNetwork() {
+	return this->network;
 }
 
-int Series::getScore() {
-	return this->score;
+int Series::getRating() {
+	return this->rating;
 }
 
 void Series::setName(string name) {
 	this->name = name;
+}
+
+void Series::setId(int id) {
+	this->id = id;
 }
 
 void Series::setReleaseYear(int year) {
@@ -54,22 +68,23 @@ void Series::setNumSeasons(int numSeasons) {
 	this->numSeasons = numSeasons;
 }
 
-void Series::setMainActors(vector<string> mainActors) {
+void Series::setEpisodeCount(int episodeCount) {
+	this->episodeCount = episodeCount;
+}
+
+void Series::setMainActors(string mainActors) {
 	this->mainActors = mainActors;
 }
 
-void Series::setMainCharacters(vector<string> mainCharacters) {
+void Series::setMainCharacters(string mainCharacters) {
 	this->mainCharacters = mainCharacters;
 }
 
-void Series::setStreaming(string streaming) {
-	this->streaming = streaming;
+void Series::setNetwork(string network) {
+	this->network = network;
 }
 
-void Series::setScore(int score) {
-	this->score = score;
+void Series::setRating(int rating) {
+	this->rating = rating;
 }
 
-void Series::teste(){
-	cout << "Ola amiguinho" << endl;
-}

@@ -4,32 +4,36 @@ using namespace std;
 
 class Series{
 private:
+	int id;
 	string name;
 	int releaseYear;
 	int numSeasons;
-	vector<string> mainActors;
-	vector<string> mainCharacters;
-	string streaming;
-	int score;
+	int episodeCount;
+	string mainActors;
+	string mainCharacters;
+	string network;
+	int rating;
 
 public:
-	Series(string name, int releaseYear, int numSeasons, vector<string> mainActors, vector<string> mainCharacters, string streaming, int score);
+	Series(int id, string name, int releaseYear, int numSeasons, int episodeCount, string mainActors, string mainCharacters, string network, int rating);
 	~Series();
 	string getName();
+	int getId();
 	int getReleaseYear();
 	int getNumSeasons();
-	vector<string> getMainActors();
-	vector<string> getMainCharacters();
-	string getStreaming();
-	int getScore();
+	int getEpisodeCount();
+	string getMainActors();
+	string getMainCharacters();
+	string getNetwork();
+	int getRating();
 	
 	void setName(string name);
+	void setId(int id);
 	void setReleaseYear(int year);
 	void setNumSeasons(int numSeasons);
-	void setMainActors(vector<string> mainActors);
-	void setMainCharacters(vector<string> mainCharacters);
-	void setStreaming(string streaming);
-	void setScore(int score);
-	
-	void teste();
+	void setEpisodeCount(int episodeCount);
+	void setMainActors(string mainActors);
+	void setMainCharacters(string mainCharacters);
+	void setNetwork(string network);
+	void setRating(int rating);
 };
