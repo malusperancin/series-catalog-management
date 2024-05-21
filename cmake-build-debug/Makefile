@@ -153,29 +153,29 @@ AbstractSeriesDAO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/AbstractSeriesDAO.cpp.s
 .PHONY : AbstractSeriesDAO.cpp.s
 
-Controller.o: Controller.cpp.o
-.PHONY : Controller.o
+MainController.o: MainController.cpp.o
+.PHONY : MainController.o
 
 # target to build an object file
-Controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/Controller.cpp.o
-.PHONY : Controller.cpp.o
+MainController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/MainController.cpp.o
+.PHONY : MainController.cpp.o
 
-Controller.i: Controller.cpp.i
-.PHONY : Controller.i
+MainController.i: MainController.cpp.i
+.PHONY : MainController.i
 
 # target to preprocess a source file
-Controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/Controller.cpp.i
-.PHONY : Controller.cpp.i
+MainController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/MainController.cpp.i
+.PHONY : MainController.cpp.i
 
-Controller.s: Controller.cpp.s
-.PHONY : Controller.s
+MainController.s: MainController.cpp.s
+.PHONY : MainController.s
 
 # target to generate assembly for a file
-Controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/Controller.cpp.s
-.PHONY : Controller.cpp.s
+MainController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/MainController.cpp.s
+.PHONY : MainController.cpp.s
 
 MemoryDBConnection.o: MemoryDBConnection.cpp.o
 .PHONY : MemoryDBConnection.o
@@ -249,6 +249,30 @@ Series.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/Series.cpp.s
 .PHONY : Series.cpp.s
 
+SeriesController.o: SeriesController.cpp.o
+.PHONY : SeriesController.o
+
+# target to build an object file
+SeriesController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o
+.PHONY : SeriesController.cpp.o
+
+SeriesController.i: SeriesController.cpp.i
+.PHONY : SeriesController.i
+
+# target to preprocess a source file
+SeriesController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.i
+.PHONY : SeriesController.cpp.i
+
+SeriesController.s: SeriesController.cpp.s
+.PHONY : SeriesController.s
+
+# target to generate assembly for a file
+SeriesController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.s
+.PHONY : SeriesController.cpp.s
+
 SeriesDBDAO.o: SeriesDBDAO.cpp.o
 .PHONY : SeriesDBDAO.o
 
@@ -321,6 +345,30 @@ ServerDBConnection.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/ServerDBConnection.cpp.s
 .PHONY : ServerDBConnection.cpp.s
 
+TextFromFile.o: TextFromFile.cpp.o
+.PHONY : TextFromFile.o
+
+# target to build an object file
+TextFromFile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o
+.PHONY : TextFromFile.cpp.o
+
+TextFromFile.i: TextFromFile.cpp.i
+.PHONY : TextFromFile.i
+
+# target to preprocess a source file
+TextFromFile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.i
+.PHONY : TextFromFile.cpp.i
+
+TextFromFile.s: TextFromFile.cpp.s
+.PHONY : TextFromFile.s
+
+# target to generate assembly for a file
+TextFromFile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.s
+.PHONY : TextFromFile.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -357,9 +405,9 @@ help:
 	@echo "... AbstractSeriesDAO.o"
 	@echo "... AbstractSeriesDAO.i"
 	@echo "... AbstractSeriesDAO.s"
-	@echo "... Controller.o"
-	@echo "... Controller.i"
-	@echo "... Controller.s"
+	@echo "... MainController.o"
+	@echo "... MainController.i"
+	@echo "... MainController.s"
 	@echo "... MemoryDBConnection.o"
 	@echo "... MemoryDBConnection.i"
 	@echo "... MemoryDBConnection.s"
@@ -369,6 +417,9 @@ help:
 	@echo "... Series.o"
 	@echo "... Series.i"
 	@echo "... Series.s"
+	@echo "... SeriesController.o"
+	@echo "... SeriesController.i"
+	@echo "... SeriesController.s"
 	@echo "... SeriesDBDAO.o"
 	@echo "... SeriesDBDAO.i"
 	@echo "... SeriesDBDAO.s"
@@ -378,6 +429,9 @@ help:
 	@echo "... ServerDBConnection.o"
 	@echo "... ServerDBConnection.i"
 	@echo "... ServerDBConnection.s"
+	@echo "... TextFromFile.o"
+	@echo "... TextFromFile.i"
+	@echo "... TextFromFile.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -38,7 +38,6 @@ const int Menu::getChoice()
 			cout << decorator << endl;
 			cout << title << endl;
 			cout << decorator << endl;
-
 			for (index = 0; index < ((itens.size() - (zeroForLastOpt ? 1 : 0))); index++)
 				{
 				cout << (index + (zeroForLastOpt ? 1 : 00)) << " - " << itens.at(index) << endl;

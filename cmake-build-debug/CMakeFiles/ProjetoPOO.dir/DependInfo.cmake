@@ -9,13 +9,15 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/felipe/POO I/series-catalog-management/AbstractSeriesDAO.cpp" "CMakeFiles/ProjetoPOO.dir/AbstractSeriesDAO.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/AbstractSeriesDAO.cpp.o.d"
-  "/home/felipe/POO I/series-catalog-management/Controller.cpp" "CMakeFiles/ProjetoPOO.dir/Controller.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/Controller.cpp.o.d"
+  "/home/felipe/POO I/series-catalog-management/MainController.cpp" "CMakeFiles/ProjetoPOO.dir/MainController.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/MainController.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/MemoryDBConnection.cpp" "CMakeFiles/ProjetoPOO.dir/MemoryDBConnection.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/MemoryDBConnection.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/Menu.cpp" "CMakeFiles/ProjetoPOO.dir/Menu.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/Menu.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/Series.cpp" "CMakeFiles/ProjetoPOO.dir/Series.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/Series.cpp.o.d"
+  "/home/felipe/POO I/series-catalog-management/SeriesController.cpp" "CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/SeriesDBDAO.cpp" "CMakeFiles/ProjetoPOO.dir/SeriesDBDAO.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/SeriesDBDAO.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/SeriesMemDAO.cpp" "CMakeFiles/ProjetoPOO.dir/SeriesMemDAO.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/SeriesMemDAO.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/ServerDBConnection.cpp" "CMakeFiles/ProjetoPOO.dir/ServerDBConnection.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/ServerDBConnection.cpp.o.d"
+  "/home/felipe/POO I/series-catalog-management/TextFromFile.cpp" "CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/main.cpp" "CMakeFiles/ProjetoPOO.dir/main.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/main.cpp.o.d"
   )
 

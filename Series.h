@@ -18,7 +18,10 @@ private:
 	int rating;
 
 public:
-	Series(int id, string name, int releaseYear, int numSeasons, int episodeCount, string mainActors, string mainCharacters, string network, int rating);
+    Series(const string &name, int releaseYear, int numSeasons, int episodeCount, const string &mainActors,
+           const string &mainCharacters, const string &network, int rating);
+
+    Series(int id, string name, int releaseYear, int numSeasons, int episodeCount, string mainActors, string mainCharacters, string network, int rating);
 	~Series();
 	string getName();
 	int getId();
@@ -39,6 +42,7 @@ public:
 	void setMainCharacters(string mainCharacters);
 	void setNetwork(string network);
 	void setRating(int rating);
+    friend ostream& operator<<(ostream& os, const Series& series);
 };
 
 #endif

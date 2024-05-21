@@ -92,10 +92,10 @@
 		<Unit filename="/home/felipe/POO I/series-catalog-management/AbstractSeriesDAO.h">
 			<Option target="ProjetoPOO"/>
 		</Unit>
-		<Unit filename="/home/felipe/POO I/series-catalog-management/Controller.cpp">
+		<Unit filename="/home/felipe/POO I/series-catalog-management/MainController.cpp">
 			<Option target="ProjetoPOO"/>
 		</Unit>
-		<Unit filename="/home/felipe/POO I/series-catalog-management/Controller.h">
+		<Unit filename="/home/felipe/POO I/series-catalog-management/MainController.h">
 			<Option target="ProjetoPOO"/>
 		</Unit>
 		<Unit filename="/home/felipe/POO I/series-catalog-management/MemoryDBConnection.cpp">
@@ -116,6 +116,12 @@
 		<Unit filename="/home/felipe/POO I/series-catalog-management/Series.h">
 			<Option target="ProjetoPOO"/>
 		</Unit>
+		<Unit filename="/home/felipe/POO I/series-catalog-management/SeriesController.cpp">
+			<Option target="ProjetoPOO"/>
+		</Unit>
+		<Unit filename="/home/felipe/POO I/series-catalog-management/SeriesController.h">
+			<Option target="ProjetoPOO"/>
+		</Unit>
 		<Unit filename="/home/felipe/POO I/series-catalog-management/SeriesDBDAO.cpp">
 			<Option target="ProjetoPOO"/>
 		</Unit>
@@ -132,6 +138,12 @@
 			<Option target="ProjetoPOO"/>
 		</Unit>
 		<Unit filename="/home/felipe/POO I/series-catalog-management/ServerDBConnection.h">
+			<Option target="ProjetoPOO"/>
+		</Unit>
+		<Unit filename="/home/felipe/POO I/series-catalog-management/TextFromFile.cpp">
+			<Option target="ProjetoPOO"/>
+		</Unit>
+		<Unit filename="/home/felipe/POO I/series-catalog-management/TextFromFile.h">
 			<Option target="ProjetoPOO"/>
 		</Unit>
 		<Unit filename="/home/felipe/POO I/series-catalog-management/main.cpp">

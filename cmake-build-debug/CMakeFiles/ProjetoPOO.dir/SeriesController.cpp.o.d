@@ -1,5 +1,5 @@
-CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: \
- /home/felipe/POO\ I/series-catalog-management/Controller.cpp \
+CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o: \
+ /home/felipe/POO\ I/series-catalog-management/SeriesController.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/9/iostream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -138,7 +138,7 @@ CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: \
  /usr/include/c++/9/bits/basic_ios.tcc \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
  /usr/include/c++/9/bits/istream.tcc \
- /home/felipe/POO\ I/series-catalog-management/SeriesDBDAO.h \
+ /home/felipe/POO\ I/series-catalog-management/SeriesController.h \
  /home/felipe/POO\ I/series-catalog-management/AbstractSeriesDAO.h \
  /usr/include/c++/9/vector /usr/include/c++/9/bits/stl_construct.h \
  /usr/include/c++/9/bits/stl_uninitialized.h /usr/include/c++/9/utility \
@@ -146,78 +146,4 @@ CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: \
  /usr/include/c++/9/bits/stl_vector.h \
  /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
  /home/felipe/POO\ I/series-catalog-management/Series.h \
- /home/felipe/POO\ I/series-catalog-management/ServerDBConnection.h \
- /usr/include/mariadb/conncpp.hpp /usr/include/mariadb/conncpp/Driver.hpp \
- /usr/include/mariadb/conncpp/buildconf.hpp \
- /usr/include/mariadb/conncpp/SQLString.hpp /usr/include/c++/9/memory \
- /usr/include/c++/9/bits/stl_tempbuf.h \
- /usr/include/c++/9/bits/stl_raw_storage_iter.h \
- /usr/include/c++/9/ext/concurrence.h \
- /usr/include/c++/9/bits/uses_allocator.h \
- /usr/include/c++/9/bits/unique_ptr.h /usr/include/c++/9/tuple \
- /usr/include/c++/9/array /usr/include/c++/9/bits/invoke.h \
- /usr/include/c++/9/bits/shared_ptr.h \
- /usr/include/c++/9/bits/shared_ptr_base.h \
- /usr/include/c++/9/bits/allocated_ptr.h \
- /usr/include/c++/9/bits/refwrap.h \
- /usr/include/c++/9/ext/aligned_buffer.h \
- /usr/include/c++/9/bits/shared_ptr_atomic.h \
- /usr/include/c++/9/bits/atomic_base.h \
- /usr/include/c++/9/bits/atomic_lockfree_defines.h \
- /usr/include/c++/9/backward/auto_ptr.h \
- /usr/include/c++/9/pstl/glue_memory_defs.h \
- /usr/include/c++/9/pstl/execution_defs.h \
- /usr/include/mariadb/conncpp/Connection.hpp \
- /usr/include/mariadb/conncpp/Properties.hpp /usr/include/c++/9/map \
- /usr/include/c++/9/bits/stl_tree.h /usr/include/c++/9/bits/node_handle.h \
- /usr/include/c++/9/optional \
- /usr/include/c++/9/bits/enable_special_members.h \
- /usr/include/c++/9/bits/stl_map.h /usr/include/c++/9/bits/stl_multimap.h \
- /usr/include/c++/9/bits/erase_if.h \
- /usr/include/mariadb/conncpp/Savepoint.hpp \
- /usr/include/mariadb/conncpp/jdbccompat.hpp /usr/include/c++/9/algorithm \
- /usr/include/c++/9/bits/stl_algo.h \
- /usr/include/c++/9/bits/algorithmfwd.h \
- /usr/include/c++/9/bits/stl_heap.h \
- /usr/include/c++/9/bits/uniform_int_dist.h \
- /usr/include/c++/9/pstl/glue_algorithm_defs.h \
- /usr/include/c++/9/functional /usr/include/c++/9/bits/std_function.h \
- /usr/include/c++/9/unordered_map /usr/include/c++/9/bits/hashtable.h \
- /usr/include/c++/9/bits/hashtable_policy.h \
- /usr/include/c++/9/bits/unordered_map.h \
- /usr/include/mariadb/conncpp/CArray.hpp \
- /usr/include/mariadb/conncpp/compat/Struct.hpp \
- /usr/include/mariadb/conncpp/compat/Object.hpp \
- /usr/include/mariadb/conncpp/compat/Executor.hpp \
- /usr/include/mariadb/conncpp/compat/XAResource.hpp \
- /usr/include/mariadb/conncpp/PooledConnection.hpp \
- /usr/include/mariadb/conncpp/XAConnection.hpp \
- /usr/include/mariadb/conncpp/DriverManager.hpp \
- /usr/include/mariadb/conncpp/Driver.hpp \
- /usr/include/mariadb/conncpp/Connection.hpp \
- /usr/include/mariadb/conncpp/ResultSet.hpp \
- /usr/include/mariadb/conncpp/Warning.hpp \
- /usr/include/mariadb/conncpp/DatabaseMetaData.hpp \
- /usr/include/mariadb/conncpp/List.hpp /usr/include/c++/9/list \
- /usr/include/c++/9/bits/stl_list.h /usr/include/c++/9/bits/list.tcc \
- /usr/include/mariadb/conncpp/ResultSetMetaData.hpp \
- /usr/include/mariadb/conncpp/Statement.hpp \
- /usr/include/mariadb/conncpp/ResultSet.hpp \
- /usr/include/mariadb/conncpp/PreparedStatement.hpp \
- /usr/include/mariadb/conncpp/ParameterMetaData.hpp \
- /usr/include/mariadb/conncpp/Statement.hpp \
- /usr/include/mariadb/conncpp/ParameterMetaData.hpp \
- /usr/include/mariadb/conncpp/CallableStatement.hpp \
- /usr/include/mariadb/conncpp/PreparedStatement.hpp \
- /usr/include/mariadb/conncpp/Warning.hpp \
- /usr/include/mariadb/conncpp/Savepoint.hpp \
- /usr/include/mariadb/conncpp/Types.hpp \
- /usr/include/mariadb/conncpp/SQLString.hpp \
- /usr/include/mariadb/conncpp/Exception.hpp \
- /usr/include/mariadb/conncpp/jdbccompat.hpp \
- /usr/include/mariadb/MariaDbDataSource.hpp \
- /usr/include/mariadb/conncpp.hpp \
- /home/felipe/POO\ I/series-catalog-management/SeriesMemDAO.h \
- /home/felipe/POO\ I/series-catalog-management/MemoryDBConnection.h \
- /home/felipe/POO\ I/series-catalog-management/Controller.h \
  /home/felipe/POO\ I/series-catalog-management/Menu.h

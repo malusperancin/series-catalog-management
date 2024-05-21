@@ -1,5 +1,5 @@
-CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: \
- /home/felipe/POO\ I/series-catalog-management/Controller.cpp \
+CMakeFiles/ProjetoPOO.dir/MainController.cpp.o: \
+ /home/felipe/POO\ I/series-catalog-management/MainController.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/9/iostream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -137,19 +137,10 @@ CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: \
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
- /usr/include/c++/9/bits/istream.tcc \
- /home/felipe/POO\ I/series-catalog-management/SeriesDBDAO.h \
- /home/felipe/POO\ I/series-catalog-management/AbstractSeriesDAO.h \
- /usr/include/c++/9/vector /usr/include/c++/9/bits/stl_construct.h \
+ /usr/include/c++/9/bits/istream.tcc /usr/include/c++/9/memory \
+ /usr/include/c++/9/bits/stl_construct.h \
  /usr/include/c++/9/bits/stl_uninitialized.h /usr/include/c++/9/utility \
  /usr/include/c++/9/bits/stl_relops.h \
- /usr/include/c++/9/bits/stl_vector.h \
- /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
- /home/felipe/POO\ I/series-catalog-management/Series.h \
- /home/felipe/POO\ I/series-catalog-management/ServerDBConnection.h \
- /usr/include/mariadb/conncpp.hpp /usr/include/mariadb/conncpp/Driver.hpp \
- /usr/include/mariadb/conncpp/buildconf.hpp \
- /usr/include/mariadb/conncpp/SQLString.hpp /usr/include/c++/9/memory \
  /usr/include/c++/9/bits/stl_tempbuf.h \
  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
  /usr/include/c++/9/ext/concurrence.h \
@@ -167,6 +158,15 @@ CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: \
  /usr/include/c++/9/backward/auto_ptr.h \
  /usr/include/c++/9/pstl/glue_memory_defs.h \
  /usr/include/c++/9/pstl/execution_defs.h \
+ /home/felipe/POO\ I/series-catalog-management/SeriesDBDAO.h \
+ /home/felipe/POO\ I/series-catalog-management/AbstractSeriesDAO.h \
+ /usr/include/c++/9/vector /usr/include/c++/9/bits/stl_vector.h \
+ /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
+ /home/felipe/POO\ I/series-catalog-management/Series.h \
+ /home/felipe/POO\ I/series-catalog-management/ServerDBConnection.h \
+ /usr/include/mariadb/conncpp.hpp /usr/include/mariadb/conncpp/Driver.hpp \
+ /usr/include/mariadb/conncpp/buildconf.hpp \
+ /usr/include/mariadb/conncpp/SQLString.hpp \
  /usr/include/mariadb/conncpp/Connection.hpp \
  /usr/include/mariadb/conncpp/Properties.hpp /usr/include/c++/9/map \
  /usr/include/c++/9/bits/stl_tree.h /usr/include/c++/9/bits/node_handle.h \
@@ -219,5 +219,7 @@ CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: \
  /usr/include/mariadb/conncpp.hpp \
  /home/felipe/POO\ I/series-catalog-management/SeriesMemDAO.h \
  /home/felipe/POO\ I/series-catalog-management/MemoryDBConnection.h \
- /home/felipe/POO\ I/series-catalog-management/Controller.h \
- /home/felipe/POO\ I/series-catalog-management/Menu.h
+ /home/felipe/POO\ I/series-catalog-management/MainController.h \
+ /home/felipe/POO\ I/series-catalog-management/TextFromFile.h \
+ /home/felipe/POO\ I/series-catalog-management/Menu.h \
+ /home/felipe/POO\ I/series-catalog-management/SeriesController.h

@@ -83,19 +83,19 @@ CMakeFiles/ProjetoPOO.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetoPOO.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/felipe/POO I/series-catalog-management/main.cpp" -o CMakeFiles/ProjetoPOO.dir/main.cpp.s
 
-CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: CMakeFiles/ProjetoPOO.dir/flags.make
-CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: /home/felipe/POO\ I/series-catalog-management/Controller.cpp
-CMakeFiles/ProjetoPOO.dir/Controller.cpp.o: CMakeFiles/ProjetoPOO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/felipe/POO I/series-catalog-management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ProjetoPOO.dir/Controller.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetoPOO.dir/Controller.cpp.o -MF CMakeFiles/ProjetoPOO.dir/Controller.cpp.o.d -o CMakeFiles/ProjetoPOO.dir/Controller.cpp.o -c "/home/felipe/POO I/series-catalog-management/Controller.cpp"
+CMakeFiles/ProjetoPOO.dir/MainController.cpp.o: CMakeFiles/ProjetoPOO.dir/flags.make
+CMakeFiles/ProjetoPOO.dir/MainController.cpp.o: /home/felipe/POO\ I/series-catalog-management/MainController.cpp
+CMakeFiles/ProjetoPOO.dir/MainController.cpp.o: CMakeFiles/ProjetoPOO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/felipe/POO I/series-catalog-management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ProjetoPOO.dir/MainController.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetoPOO.dir/MainController.cpp.o -MF CMakeFiles/ProjetoPOO.dir/MainController.cpp.o.d -o CMakeFiles/ProjetoPOO.dir/MainController.cpp.o -c "/home/felipe/POO I/series-catalog-management/MainController.cpp"
 
-CMakeFiles/ProjetoPOO.dir/Controller.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetoPOO.dir/Controller.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/felipe/POO I/series-catalog-management/Controller.cpp" > CMakeFiles/ProjetoPOO.dir/Controller.cpp.i
+CMakeFiles/ProjetoPOO.dir/MainController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetoPOO.dir/MainController.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/felipe/POO I/series-catalog-management/MainController.cpp" > CMakeFiles/ProjetoPOO.dir/MainController.cpp.i
 
-CMakeFiles/ProjetoPOO.dir/Controller.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetoPOO.dir/Controller.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/felipe/POO I/series-catalog-management/Controller.cpp" -o CMakeFiles/ProjetoPOO.dir/Controller.cpp.s
+CMakeFiles/ProjetoPOO.dir/MainController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetoPOO.dir/MainController.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/felipe/POO I/series-catalog-management/MainController.cpp" -o CMakeFiles/ProjetoPOO.dir/MainController.cpp.s
 
 CMakeFiles/ProjetoPOO.dir/Menu.cpp.o: CMakeFiles/ProjetoPOO.dir/flags.make
 CMakeFiles/ProjetoPOO.dir/Menu.cpp.o: /home/felipe/POO\ I/series-catalog-management/Menu.cpp
@@ -195,23 +195,53 @@ CMakeFiles/ProjetoPOO.dir/AbstractSeriesDAO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetoPOO.dir/AbstractSeriesDAO.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/felipe/POO I/series-catalog-management/AbstractSeriesDAO.cpp" -o CMakeFiles/ProjetoPOO.dir/AbstractSeriesDAO.cpp.s
 
+CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o: CMakeFiles/ProjetoPOO.dir/flags.make
+CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o: /home/felipe/POO\ I/series-catalog-management/TextFromFile.cpp
+CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o: CMakeFiles/ProjetoPOO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/felipe/POO I/series-catalog-management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o -MF CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o.d -o CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o -c "/home/felipe/POO I/series-catalog-management/TextFromFile.cpp"
+
+CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/felipe/POO I/series-catalog-management/TextFromFile.cpp" > CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.i
+
+CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/felipe/POO I/series-catalog-management/TextFromFile.cpp" -o CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.s
+
+CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o: CMakeFiles/ProjetoPOO.dir/flags.make
+CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o: /home/felipe/POO\ I/series-catalog-management/SeriesController.cpp
+CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o: CMakeFiles/ProjetoPOO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/felipe/POO I/series-catalog-management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o -MF CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o.d -o CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o -c "/home/felipe/POO I/series-catalog-management/SeriesController.cpp"
+
+CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/felipe/POO I/series-catalog-management/SeriesController.cpp" > CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.i
+
+CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/felipe/POO I/series-catalog-management/SeriesController.cpp" -o CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.s
+
 # Object files for target ProjetoPOO
 ProjetoPOO_OBJECTS = \
 "CMakeFiles/ProjetoPOO.dir/main.cpp.o" \
-"CMakeFiles/ProjetoPOO.dir/Controller.cpp.o" \
+"CMakeFiles/ProjetoPOO.dir/MainController.cpp.o" \
 "CMakeFiles/ProjetoPOO.dir/Menu.cpp.o" \
 "CMakeFiles/ProjetoPOO.dir/Series.cpp.o" \
 "CMakeFiles/ProjetoPOO.dir/SeriesDBDAO.cpp.o" \
 "CMakeFiles/ProjetoPOO.dir/MemoryDBConnection.cpp.o" \
 "CMakeFiles/ProjetoPOO.dir/SeriesMemDAO.cpp.o" \
 "CMakeFiles/ProjetoPOO.dir/ServerDBConnection.cpp.o" \
-"CMakeFiles/ProjetoPOO.dir/AbstractSeriesDAO.cpp.o"
+"CMakeFiles/ProjetoPOO.dir/AbstractSeriesDAO.cpp.o" \
+"CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o" \
+"CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o"
 
 # External object files for target ProjetoPOO
 ProjetoPOO_EXTERNAL_OBJECTS =
 
 ProjetoPOO: CMakeFiles/ProjetoPOO.dir/main.cpp.o
-ProjetoPOO: CMakeFiles/ProjetoPOO.dir/Controller.cpp.o
+ProjetoPOO: CMakeFiles/ProjetoPOO.dir/MainController.cpp.o
 ProjetoPOO: CMakeFiles/ProjetoPOO.dir/Menu.cpp.o
 ProjetoPOO: CMakeFiles/ProjetoPOO.dir/Series.cpp.o
 ProjetoPOO: CMakeFiles/ProjetoPOO.dir/SeriesDBDAO.cpp.o
@@ -219,9 +249,11 @@ ProjetoPOO: CMakeFiles/ProjetoPOO.dir/MemoryDBConnection.cpp.o
 ProjetoPOO: CMakeFiles/ProjetoPOO.dir/SeriesMemDAO.cpp.o
 ProjetoPOO: CMakeFiles/ProjetoPOO.dir/ServerDBConnection.cpp.o
 ProjetoPOO: CMakeFiles/ProjetoPOO.dir/AbstractSeriesDAO.cpp.o
+ProjetoPOO: CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o
+ProjetoPOO: CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o
 ProjetoPOO: CMakeFiles/ProjetoPOO.dir/build.make
 ProjetoPOO: CMakeFiles/ProjetoPOO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/felipe/POO I/series-catalog-management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ProjetoPOO"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/felipe/POO I/series-catalog-management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ProjetoPOO"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ProjetoPOO.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

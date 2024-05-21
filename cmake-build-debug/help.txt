@@ -1,0 +1,19 @@
+***Bem-vindo à tela de ajuda! Aqui estão algumas instruções sobre como usar este programa:***
+
+1. Séries:
+   a) Incluir um novo registro: Insira as informações da série de TV que você deseja adicionar. Isso inclui nome da série, ano de lançamento, temporada, número de episódios, principais atores/atrizes, personagens principais, canal/streaming e nota de classificação.
+   b) Recuperar um registro: Insira o nome da série de TV que você deseja recuperar.
+   c) Editar um registro: Primeiro, insira o nome da série de TV que você deseja editar. Em seguida, insira as novas informações para essa série.
+   d) Excluir um registro: Insira o nome da série de TV que você deseja excluir.
+
+2. Relatórios:
+   a) Registros ordenados por título: Esta opção irá mostrar todas as séries de TV ordenadas por título.
+   b) Registros ordenados por canal/streaming: Esta opção irá mostrar todas as séries de TV ordenadas pelo canal/streaming.
+   c) Registros ordenados por ano: Esta opção irá mostrar todas as séries de TV ordenadas pelo ano de lançamento.
+   d) Registros ordenados por nota: Esta opção irá mostrar todas as séries de TV ordenadas pela nota de classificação.
+
+3. Ajuda: Você já está aqui!
+4. Créditos: Mostra informações sobre o desenvolvedor deste programa.
+5. Sair: Fecha o programa.
+
+Lembre-se, todas as opções do menu são acionadas digitando o número ou a letra correspondente no prompt de comando.

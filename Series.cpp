@@ -12,6 +12,14 @@ Series::Series(int id, string name, int releaseYear, int numSeasons, int episode
 	this->rating = rating;
 }
 
+Series::Series(const string &name, int releaseYear, int numSeasons, int episodeCount, const string &mainActors,
+               const string &mainCharacters, const string &network, int rating) : name(name), releaseYear(releaseYear),
+                                                                                  numSeasons(numSeasons),
+                                                                                  episodeCount(episodeCount),
+                                                                                  mainActors(mainActors),
+                                                                                  mainCharacters(mainCharacters),
+                                                                                  network(network), rating(rating) {}
+
 Series::~Series() {
 	// Destructor
 }
@@ -86,5 +94,14 @@ void Series::setNetwork(string network) {
 
 void Series::setRating(int rating) {
 	this->rating = rating;
+}
+
+ostream &operator<<(ostream &os, const Series &series) {
+    os << series.name << " (" << series.numSeasons << " temporadas - " << series.episodeCount << " episodios)\t";
+    os << series.network << "\t" << series.releaseYear << "\t" << series.rating << "/10" << endl;
+    os << "Personagens principais: " << series.mainCharacters << endl;
+    os << "Atores principais: " << series.mainActors << endl;
+
+    return os;
 }
 

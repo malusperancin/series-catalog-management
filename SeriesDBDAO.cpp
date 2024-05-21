@@ -4,12 +4,12 @@
 
 using namespace std;
 
-const string SeriesDBDAO::SQL_getAllSeries = "select * from Series order by series_name";
-const string SeriesDBDAO::SQL_getSeriesById = "select * from Series where internal_id = ?";
-const string SeriesDBDAO::SQL_addSeries = "insert into Series (internal_id, series_name, release_year, season, episode_count, main_actors, main_characters, network, rating) values (?,?,?,?,?,?,?,?,?)";
-const string SeriesDBDAO::SQL_updateSeries = "update Series set series_name = ?, release_year = ?, season = ? , episode_count = ?, main_actors = ?, main_characters = ?, network = ?, rating = ? where internal_id = ?";
-const string SeriesDBDAO::SQL_deleteSeries = "delete from Series where internal_id = ?";
-const string SeriesDBDAO::SQL_getSeriesByName = "select * from Series where series_name = ?";
+const string SeriesDBDAO::SQL_getAllSeries = "select * from SERIES order by series_name";
+const string SeriesDBDAO::SQL_getSeriesById = "select * from SERIES where internal_id = ?";
+const string SeriesDBDAO::SQL_addSeries = "insert into SERIES (series_name, release_year, season, episode_count, main_actors, main_characters, network, rating) values (?,?,?,?,?,?,?,?)";
+const string SeriesDBDAO::SQL_updateSeries = "update SERIES set series_name = ?, release_year = ?, season = ? , episode_count = ?, main_actors = ?, main_characters = ?, network = ?, rating = ? where internal_id = ?";
+const string SeriesDBDAO::SQL_deleteSeries = "delete from SERIES where internal_id = ?";
+const string SeriesDBDAO::SQL_getSeriesByName = "select * from SERIES where series_name = ?";
 
 
 SeriesDBDAO::SeriesDBDAO(ServerDBConnection *serverDBConnection) :
@@ -89,15 +89,14 @@ void SeriesDBDAO::addSeries(Series *series)
 	try
 		{
 		unique_ptr<sql::PreparedStatement> stmnt(serverDBConnection->getConnection()->prepareStatement(SQL_addSeries));
-		stmnt->setInt(1, series->getId());
-		stmnt->setString(2, series->getName());
-        stmnt->setInt(3, series->getReleaseYear());
-		stmnt->setInt(4, series->getNumSeasons());
-		stmnt->setInt(5, series->getEpisodeCount());
-        stmnt->setString(6, series->getMainActors());
-        stmnt->setString(7, series->getMainCharacters());
-        stmnt->setString(8, series->getNetwork());
-        stmnt->setInt(9, series->getRating());
+		stmnt->setString(1, series->getName());
+        stmnt->setInt(2, series->getReleaseYear());
+		stmnt->setInt(3, series->getNumSeasons());
+		stmnt->setInt(4, series->getEpisodeCount());
+        stmnt->setString(5, series->getMainActors());
+        stmnt->setString(6, series->getMainCharacters());
+        stmnt->setString(7, series->getNetwork());
+        stmnt->setInt(8, series->getRating());
 
 		stmnt->executeQuery();
 		}

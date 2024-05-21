@@ -1,0 +1,16 @@
+Desenvolvedores:
+- **Felipe Ferreira Moreira**
+- **Julia Dias Luz**
+- **Juliana da Costa Silva**
+- **Maria Luiza Sperancin Mancebo**
+- **Nicolas Suzuki**
+
+Ambiente de Desenvolvimento Integrado (IDE) utilizado:
+- **CLion**
+
+Ano de lançamento:
+- **2024**
+
+Este programa foi desenvolvido como parte do curso:
+- **G_SI300A_2024S1 - Programação Orientada a Objetos I**
+- Professor: **André Angelis**

@@ -1,6 +1,8 @@
 CMakeFiles/ProjetoPOO.dir/main.cpp.o: \
  /home/felipe/POO\ I/series-catalog-management/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/9/iostream \
+ /usr/include/stdc-predef.h \
+ /home/felipe/POO\ I/series-catalog-management/MainController.h \
+ /usr/include/c++/9/iostream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -137,14 +139,13 @@ CMakeFiles/ProjetoPOO.dir/main.cpp.o: \
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
- /usr/include/c++/9/bits/istream.tcc \
- /home/felipe/POO\ I/series-catalog-management/SeriesDBDAO.h \
- /home/felipe/POO\ I/series-catalog-management/AbstractSeriesDAO.h \
- /usr/include/c++/9/vector /usr/include/c++/9/bits/stl_construct.h \
+ /usr/include/c++/9/bits/istream.tcc /usr/include/c++/9/vector \
+ /usr/include/c++/9/bits/stl_construct.h \
  /usr/include/c++/9/bits/stl_uninitialized.h /usr/include/c++/9/utility \
  /usr/include/c++/9/bits/stl_relops.h \
  /usr/include/c++/9/bits/stl_vector.h \
  /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
+ /home/felipe/POO\ I/series-catalog-management/AbstractSeriesDAO.h \
  /home/felipe/POO\ I/series-catalog-management/Series.h \
  /home/felipe/POO\ I/series-catalog-management/ServerDBConnection.h \
  /usr/include/mariadb/conncpp.hpp /usr/include/mariadb/conncpp/Driver.hpp \

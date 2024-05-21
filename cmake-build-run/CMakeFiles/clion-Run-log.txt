@@ -12,4 +12,4 @@ CMake Warning:
 
 
 CMake Error: Unknown argument -lmariadbclient
-CMake Error: Run 'cmake --help' for all supported options.
+CMake Error: Run 'cmake --actionHelp' for all supported options.
