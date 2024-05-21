@@ -81,10 +81,10 @@ void SeriesController::actionDisplaySeries() {
     if(!series.empty()){
         int i = 1;
         for (auto* serie : series){
-            cout << i << ". "<< *serie << endl;
+            cout << i << "- "<< *serie << endl;
             i++;
         }
     }
     else
-        cout << "Nenhuma série cadastrada" << endl;
+        cout << "Nenhuma serie cadastrada" << endl;
 }
