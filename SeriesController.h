@@ -10,12 +10,16 @@
 class SeriesController {
 private:
     AbstractSeriesDAO* seriesDAO;
+    int selectSeries(vector<Series*> series);
 public:
     SeriesController(AbstractSeriesDAO* seriesDAO);
     virtual ~SeriesController();
     void launchSeriesActions(string title, vector<string> menuItens, vector<void (SeriesController::*)()> functions);
     void actionAddSeries();
+    void actionSearchSeriesByName();
     void actionDisplaySeries();
+    void actionUpdateSeries();
+    void actionDeleteSeries();
 };
 
 

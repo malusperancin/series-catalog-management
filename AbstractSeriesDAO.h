@@ -16,7 +16,7 @@ class AbstractSeriesDAO
 		virtual void addSeries(Series *Series) = 0;
 		virtual void updateSeries(Series *Series) = 0;
 		virtual void deleteSeries(int SeriesId) = 0;
-        virtual vector<Series*> *getSeriesByName(string name) = 0;
+        virtual vector<Series*> getSeriesByName(string name) = 0;
 	};
 
 #endif /* ABSTRACTSeriesDAO_H_ */

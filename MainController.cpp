@@ -49,10 +49,10 @@ void MainController::actionToDo() {
 
 void MainController::launchSeriesMenu() {
     vector<string> menuItens
-            { "Incluir novo registro", "Recuperar um registro", "Editar um registro", "Excluir um registro", "Retornar"};
+            { "Incluir novo registro", "Recuperar um registro", "Editar um registro", "Excluir um registro", "Listar todas", "Retornar"};
     unique_ptr<SeriesController> seriesController(new SeriesController(this->seriesDAO));
     vector<void (SeriesController::*)()> functions
-            {&SeriesController::actionAddSeries, &SeriesController::actionDisplaySeries, &SeriesController::actionAddSeries, &SeriesController::actionAddSeries};
+            {&SeriesController::actionAddSeries, &SeriesController::actionSearchSeriesByName, &SeriesController::actionUpdateSeries, &SeriesController::actionDeleteSeries, &SeriesController::actionDisplaySeries};
     seriesController->launchSeriesActions("Menu Series", menuItens, functions);
 }
 

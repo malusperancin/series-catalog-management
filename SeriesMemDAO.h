@@ -26,7 +26,7 @@ class SeriesMemDAO final : public AbstractSeriesDAO
 		virtual void deleteSeries(int SeriesId);
 		virtual void updateSeries(Series *Series);
 		virtual Series* getSeriesById(int SeriesId);
-		virtual vector<Series*>* getSeriesByName(string name);
+		virtual vector<Series*> getSeriesByName(string name);
 	};
 
 #endif /* USERMEMDAO_H_ */

@@ -97,11 +97,17 @@ void Series::setRating(int rating) {
 }
 
 ostream &operator<<(ostream &os, const Series &series) {
-    os << series.name << " (" << series.numSeasons << " temporadas - " << series.episodeCount << " episodios)\t";
+    os << series.id << " - " << series.name << " (" << series.numSeasons << " temporadas - " << series.episodeCount << " episodios)\t";
     os << series.network << "\t" << series.releaseYear << "\t" << series.rating << "/10" << endl;
     os << "Personagens principais: " << series.mainCharacters << endl;
     os << "Atores principais: " << series.mainActors << endl;
 
     return os;
+}
+
+string Series::toShortString() {
+    string buffer;
+    buffer += this->name + "\t" + this->network + "\t" + to_string(this->releaseYear) + "\t" + to_string(this->rating) + "/10";
+    return buffer;
 }
 

@@ -42,6 +42,7 @@ public:
 	void setMainCharacters(string mainCharacters);
 	void setNetwork(string network);
 	void setRating(int rating);
+    string toShortString();
     friend ostream& operator<<(ostream& os, const Series& series);
 };
 

@@ -111,15 +111,15 @@ void SeriesDBDAO::updateSeries(Series *series)
 	try
 		{
 		unique_ptr<sql::PreparedStatement> stmnt(serverDBConnection->getConnection()->prepareStatement(SQL_updateSeries));
-		stmnt->setInt(1, series->getId());
-		stmnt->setString(2, series->getName());
-        stmnt->setInt(3, series->getReleaseYear());
-		stmnt->setInt(4, series->getNumSeasons());
-		stmnt->setInt(5, series->getEpisodeCount());
-        stmnt->setString(6, series->getMainActors());
-        stmnt->setString(7, series->getMainCharacters());
-        stmnt->setString(8, series->getNetwork());
-        stmnt->setInt(9, series->getRating());
+		stmnt->setString(1, series->getName());
+        stmnt->setInt(2, series->getReleaseYear());
+		stmnt->setInt(3, series->getNumSeasons());
+		stmnt->setInt(4, series->getEpisodeCount());
+        stmnt->setString(5, series->getMainActors());
+        stmnt->setString(6, series->getMainCharacters());
+        stmnt->setString(7, series->getNetwork());
+        stmnt->setInt(8, series->getRating());
+        stmnt->setInt(9, series->getId());
 
 		stmnt->executeQuery();
 		}
@@ -144,16 +144,16 @@ void SeriesDBDAO::deleteSeries(int seriesId)
 	}
 
     
-vector<Series*>* SeriesDBDAO::getSeriesByName(string name)
+vector<Series*> SeriesDBDAO::getSeriesByName(string name)
 	{
-	vector<Series*> *buffer = NULL;
+	vector<Series*> seriesByName;
 	try
 		{
-		unique_ptr<sql::PreparedStatement> stmnt(serverDBConnection->getConnection()->prepareStatement(SQL_getSeriesById));
+		unique_ptr<sql::PreparedStatement> stmnt(serverDBConnection->getConnection()->prepareStatement(SQL_getSeriesByName));
 		stmnt->setString(1, name);
 		sql::ResultSet *res = stmnt->executeQuery();
 
-		if (res->next())
+		while (res->next())
 			{
 			int seriesId = res->getInt(1);
 			string seriesName = (res->getString(2)).c_str();
@@ -165,12 +165,13 @@ vector<Series*>* SeriesDBDAO::getSeriesByName(string name)
 			string network = (res->getString(8)).c_str();
             int rating = res->getInt(9);
 
-			buffer->push_back(new Series(seriesId, seriesName, releaseYear, season, episodeCount, mainActors, mainCharacters, network, rating));
+            Series *buffer = new Series(seriesId, seriesName, releaseYear, season, episodeCount, mainActors, mainCharacters, network, rating);
+			seriesByName.push_back(buffer);
 			}
 		}
 	catch (sql::SQLException &e)
 		{
 		cerr << "Error selecting Series: " << e.what() << endl;
 		}
-	return (buffer);
+	return (seriesByName);
 	}

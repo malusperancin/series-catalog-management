@@ -33,7 +33,7 @@ class SeriesDBDAO final : public AbstractSeriesDAO
 		virtual void deleteSeries(int SeriesId);
 		virtual void updateSeries(Series *Series);
 		virtual Series* getSeriesById(int SeriesId);
-        virtual vector<Series*>* getSeriesByName(string name);
+        virtual vector<Series*> getSeriesByName(string name);
 	};
 
 #endif /* USERDBDAO_H_ */

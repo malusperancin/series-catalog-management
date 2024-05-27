@@ -37,11 +37,11 @@ Series* SeriesMemDAO::getSeriesById(int seriesId)
 	return (buffer);
 	}
 
-vector<Series*>* SeriesMemDAO::getSeriesByName(string name)
+vector<Series*> SeriesMemDAO::getSeriesByName(string name)
 	{
 	vector<Series*> &series = memoryDBConnection->getSeriesList();
 	vector<Series*>::iterator seriesIterator = series.begin();
-	vector<Series*> *buffer = NULL;
+	vector<Series*> buffer;
 	bool found = false;
 
 	while ((!found) && (seriesIterator != series.end()))
@@ -49,7 +49,7 @@ vector<Series*>* SeriesMemDAO::getSeriesByName(string name)
 		if ((*seriesIterator)->getName() == name)
 			{
 			found = true;
-			buffer->push_back(*seriesIterator);
+			buffer.push_back(*seriesIterator);
 			}
 		seriesIterator++;
 		}
