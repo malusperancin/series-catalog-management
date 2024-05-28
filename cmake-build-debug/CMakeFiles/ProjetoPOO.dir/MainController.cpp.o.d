@@ -222,4 +222,5 @@ CMakeFiles/ProjetoPOO.dir/MainController.cpp.o: \
  /home/felipe/POO\ I/series-catalog-management/MainController.h \
  /home/felipe/POO\ I/series-catalog-management/TextFromFile.h \
  /home/felipe/POO\ I/series-catalog-management/Menu.h \
- /home/felipe/POO\ I/series-catalog-management/SeriesController.h
+ /home/felipe/POO\ I/series-catalog-management/SeriesController.h \
+ /home/felipe/POO\ I/series-catalog-management/ReportsController.h

@@ -86,3 +86,22 @@ void SeriesMemDAO::deleteSeries(int seriesId)
 		seriesIterator++;
 		}
 	}
+
+vector<Series *> SeriesMemDAO::getSeriesByNetwork(string network) {
+    vector<Series*> &series = memoryDBConnection->getSeriesList();
+    vector<Series*>::iterator seriesIterator = series.begin();
+    vector<Series*> buffer;
+    bool found = false;
+
+    while ((!found) && (seriesIterator != series.end()))
+    {
+        if ((*seriesIterator)->getNetwork() == network)
+        {
+            found = true;
+            buffer.push_back(*seriesIterator);
+        }
+        seriesIterator++;
+    }
+
+    return (buffer);
+}

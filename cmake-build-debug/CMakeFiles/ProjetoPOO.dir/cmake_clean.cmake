@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ProjetoPOO.dir/MemoryDBConnection.cpp.o.d"
   "CMakeFiles/ProjetoPOO.dir/Menu.cpp.o"
   "CMakeFiles/ProjetoPOO.dir/Menu.cpp.o.d"
+  "CMakeFiles/ProjetoPOO.dir/ReportsController.cpp.o"
+  "CMakeFiles/ProjetoPOO.dir/ReportsController.cpp.o.d"
   "CMakeFiles/ProjetoPOO.dir/Series.cpp.o"
   "CMakeFiles/ProjetoPOO.dir/Series.cpp.o.d"
   "CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o"

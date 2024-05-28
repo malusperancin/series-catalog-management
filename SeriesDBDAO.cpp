@@ -10,6 +10,9 @@ const string SeriesDBDAO::SQL_addSeries = "insert into SERIES (series_name, rele
 const string SeriesDBDAO::SQL_updateSeries = "update SERIES set series_name = ?, release_year = ?, season = ? , episode_count = ?, main_actors = ?, main_characters = ?, network = ?, rating = ? where internal_id = ?";
 const string SeriesDBDAO::SQL_deleteSeries = "delete from SERIES where internal_id = ?";
 const string SeriesDBDAO::SQL_getSeriesByName = "select * from SERIES where series_name = ?";
+const string SeriesDBDAO::SQL_getSeriesByNetwork = "select * from SERIES where network = ?";
+const string SeriesDBDAO::SQL_getSeriesByYear = "select * from SERIES where release_year = ?";
+const string SeriesDBDAO::SQL_getSeriesByRating = "select * from SERIES where rating = ?";
 
 
 SeriesDBDAO::SeriesDBDAO(ServerDBConnection *serverDBConnection) :
@@ -175,3 +178,34 @@ vector<Series*> SeriesDBDAO::getSeriesByName(string name)
 		}
 	return (seriesByName);
 	}
+
+vector<Series *> SeriesDBDAO::getSeriesByNetwork(string network) {
+    vector<Series*> seriesByNetwork;
+    try
+    {
+        unique_ptr<sql::PreparedStatement> stmnt(serverDBConnection->getConnection()->prepareStatement(SQL_getSeriesByNetwork));
+        stmnt->setString(1, network);
+        sql::ResultSet *res = stmnt->executeQuery();
+
+        while (res->next())
+        {
+            int seriesId = res->getInt(1);
+            string seriesName = (res->getString(2)).c_str();
+            int releaseYear = res->getInt(3);
+            int season = res->getInt(4);
+            int episodeCount = res->getInt(5);
+            string mainActors = (res->getString(6)).c_str();
+            string mainCharacters = (res->getString(7)).c_str();
+            string network = (res->getString(8)).c_str();
+            int rating = res->getInt(9);
+
+            Series *buffer = new Series(seriesId, seriesName, releaseYear, season, episodeCount, mainActors, mainCharacters, network, rating);
+            seriesByNetwork.push_back(buffer);
+        }
+    }
+    catch (sql::SQLException &e)
+    {
+        cerr << "Error selecting Series: " << e.what() << endl;
+    }
+    return (seriesByNetwork);
+}

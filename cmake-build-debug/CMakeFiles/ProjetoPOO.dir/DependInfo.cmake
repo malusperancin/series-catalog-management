@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/felipe/POO I/series-catalog-management/MainController.cpp" "CMakeFiles/ProjetoPOO.dir/MainController.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/MainController.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/MemoryDBConnection.cpp" "CMakeFiles/ProjetoPOO.dir/MemoryDBConnection.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/MemoryDBConnection.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/Menu.cpp" "CMakeFiles/ProjetoPOO.dir/Menu.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/Menu.cpp.o.d"
+  "/home/felipe/POO I/series-catalog-management/ReportsController.cpp" "CMakeFiles/ProjetoPOO.dir/ReportsController.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/ReportsController.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/Series.cpp" "CMakeFiles/ProjetoPOO.dir/Series.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/Series.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/SeriesController.cpp" "CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o.d"
   "/home/felipe/POO I/series-catalog-management/SeriesDBDAO.cpp" "CMakeFiles/ProjetoPOO.dir/SeriesDBDAO.cpp.o" "gcc" "CMakeFiles/ProjetoPOO.dir/SeriesDBDAO.cpp.o.d"

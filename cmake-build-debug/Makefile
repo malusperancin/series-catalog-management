@@ -225,6 +225,30 @@ Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/Menu.cpp.s
 .PHONY : Menu.cpp.s
 
+ReportsController.o: ReportsController.cpp.o
+.PHONY : ReportsController.o
+
+# target to build an object file
+ReportsController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/ReportsController.cpp.o
+.PHONY : ReportsController.cpp.o
+
+ReportsController.i: ReportsController.cpp.i
+.PHONY : ReportsController.i
+
+# target to preprocess a source file
+ReportsController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/ReportsController.cpp.i
+.PHONY : ReportsController.cpp.i
+
+ReportsController.s: ReportsController.cpp.s
+.PHONY : ReportsController.s
+
+# target to generate assembly for a file
+ReportsController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjetoPOO.dir/build.make CMakeFiles/ProjetoPOO.dir/ReportsController.cpp.s
+.PHONY : ReportsController.cpp.s
+
 Series.o: Series.cpp.o
 .PHONY : Series.o
 
@@ -414,6 +438,9 @@ help:
 	@echo "... Menu.o"
 	@echo "... Menu.i"
 	@echo "... Menu.s"
+	@echo "... ReportsController.o"
+	@echo "... ReportsController.i"
+	@echo "... ReportsController.s"
 	@echo "... Series.o"
 	@echo "... Series.i"
 	@echo "... Series.s"

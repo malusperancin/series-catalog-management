@@ -110,6 +110,12 @@
 		<Unit filename="/home/felipe/POO I/series-catalog-management/Menu.h">
 			<Option target="ProjetoPOO"/>
 		</Unit>
+		<Unit filename="/home/felipe/POO I/series-catalog-management/ReportsController.cpp">
+			<Option target="ProjetoPOO"/>
+		</Unit>
+		<Unit filename="/home/felipe/POO I/series-catalog-management/ReportsController.h">
+			<Option target="ProjetoPOO"/>
+		</Unit>
 		<Unit filename="/home/felipe/POO I/series-catalog-management/Series.cpp">
 			<Option target="ProjetoPOO"/>
 		</Unit>

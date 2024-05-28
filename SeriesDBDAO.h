@@ -20,6 +20,9 @@ class SeriesDBDAO final : public AbstractSeriesDAO
 		static const string SQL_updateSeries;
 		static const string SQL_deleteSeries;
         static const string SQL_getSeriesByName;
+        static const string SQL_getSeriesByNetwork;
+        static const string SQL_getSeriesByYear;
+        static const string SQL_getSeriesByRating;
 
 		ServerDBConnection *serverDBConnection;
 
@@ -34,6 +37,7 @@ class SeriesDBDAO final : public AbstractSeriesDAO
 		virtual void updateSeries(Series *Series);
 		virtual Series* getSeriesById(int SeriesId);
         virtual vector<Series*> getSeriesByName(string name);
+        virtual vector<Series*> getSeriesByNetwork(string network);
 	};
 
 #endif /* USERDBDAO_H_ */

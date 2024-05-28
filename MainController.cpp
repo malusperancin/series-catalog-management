@@ -7,6 +7,7 @@
 #include "TextFromFile.h"
 #include "Menu.h"
 #include "SeriesController.h"
+#include "ReportsController.h"
 
 void MainController::start() {
     this->serverDbConnection = nullptr;
@@ -59,9 +60,10 @@ void MainController::launchSeriesMenu() {
 void MainController::launchReportsMenu() {
     vector<string> menuItens
             { "Por titulo", "Por canal/streaming", "Por ano", "Por nota", "Retornar"};
-    vector<void (MainController::*)()> functions
-            {&MainController::actionToDo, &MainController::actionToDo, &MainController::actionToDo, &MainController::actionToDo};
-    launchActions("Menu Relatorios", menuItens, functions);
+    unique_ptr<ReportsController> reportsController(new ReportsController(this->seriesDAO));
+    vector<void (ReportsController::*)()> functions
+            {&ReportsController::actionReportByTitle, &ReportsController::actionReportByNetwork, &ReportsController::actionReportByTitle, &ReportsController::actionReportByTitle};
+    reportsController->launchReportsActions("Menu Series", menuItens, functions);
 }
 
 void MainController::actionHelp() {

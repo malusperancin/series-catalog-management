@@ -27,6 +27,7 @@ class SeriesMemDAO final : public AbstractSeriesDAO
 		virtual void updateSeries(Series *Series);
 		virtual Series* getSeriesById(int SeriesId);
 		virtual vector<Series*> getSeriesByName(string name);
+        virtual vector<Series*> getSeriesByNetwork(string network);
 	};
 
 #endif /* USERMEMDAO_H_ */

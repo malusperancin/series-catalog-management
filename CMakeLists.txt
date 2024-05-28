@@ -16,6 +16,8 @@ add_executable(ProjetoPOO main.cpp
         TextFromFile.cpp
         TextFromFile.h
         SeriesController.cpp
-        SeriesController.h)
+        SeriesController.h
+        ReportsController.cpp
+        ReportsController.h)
 
 target_link_libraries(ProjetoPOO mariadbcpp)
