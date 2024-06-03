@@ -13,7 +13,7 @@ private:
 public:
     ReportsController(AbstractSeriesDAO* seriesDAO);
     virtual ~ReportsController();
-    void launchReportsActions(string title, vector<string> menuItens, vector<void (ReportsController::*)()> functions);
+    void start();
     void actionReportByTitle();
     void actionReportByNetwork();
     void reportByYear();

@@ -4,6 +4,7 @@
 
 #include "ReportsController.h"
 #include "Menu.h"
+#include "MainController.h"
 
 ReportsController::ReportsController(AbstractSeriesDAO *seriesDAO) : seriesDAO(seriesDAO) {
 
@@ -13,25 +14,14 @@ ReportsController::~ReportsController() {
 
 }
 
-void ReportsController::launchReportsActions(string title, vector<string> menuItens,
-                                             vector<void (ReportsController::*)()> functions) {
-
-    try
-    {
-        Menu menu(menuItens, title, "Sua opcao: ");
-        menu.setSymbol("*");
-
-        while (int choice = menu.getChoice())
-        {
-            (this->*functions.at(choice - 1))();
-        }
-    }
-    catch (const exception &e)
-    {
-        cerr << e.what() << endl;
-    }
-
+void ReportsController::start(){
+    vector<string> menuItens
+            { "Por titulo", "Por canal/streaming", "Por ano", "Por nota", "Retornar"};
+    vector<void (ReportsController::*)()> functions
+            {&ReportsController::actionReportByTitle, &ReportsController::actionReportByNetwork, &ReportsController::actionReportByTitle, &ReportsController::actionReportByTitle};
+    MainController::launchActions<ReportsController>("Menu Series", menuItens, functions, this);
 }
+
 
 void ReportsController::actionReportByTitle() {
     string title;

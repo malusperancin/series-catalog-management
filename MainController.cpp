@@ -24,10 +24,11 @@ void MainController::start() {
 		{ "Series", "Relatorios", "Ajuda", "Creditos", "Sair"};
 	vector<void (MainController::*)()> functions
 		{&MainController::launchSeriesMenu, &MainController::launchReportsMenu, &MainController::actionHelp, &MainController::actionCredits };
-	launchActions("Main Menu", menuItens, functions);
+	launchActions<MainController>("Main Menu", menuItens, functions, this);
 }
 
-void MainController::launchActions(string title, vector<string> menuItens, vector<void (MainController::*)()> functions) {
+template<typename ControllerClass>
+void MainController::launchActions(string title, vector<string> menuItens, vector<void (ControllerClass::*)()> functions, ControllerClass* controller) {
     try
 		{
 		Menu menu(menuItens, title, "Sua opcao: ");
@@ -35,7 +36,7 @@ void MainController::launchActions(string title, vector<string> menuItens, vecto
 
 		while (int choice = menu.getChoice())
 			{
-			(this->*functions.at(choice - 1))();
+                (controller->*functions.at(choice - 1))();
 			}
 		}
 	catch (const exception &e)
@@ -49,21 +50,13 @@ void MainController::actionToDo() {
 }
 
 void MainController::launchSeriesMenu() {
-    vector<string> menuItens
-            { "Incluir novo registro", "Recuperar um registro", "Editar um registro", "Excluir um registro", "Listar todas", "Retornar"};
     unique_ptr<SeriesController> seriesController(new SeriesController(this->seriesDAO));
-    vector<void (SeriesController::*)()> functions
-            {&SeriesController::actionAddSeries, &SeriesController::actionSearchSeriesByName, &SeriesController::actionUpdateSeries, &SeriesController::actionDeleteSeries, &SeriesController::actionDisplaySeries};
-    seriesController->launchSeriesActions("Menu Series", menuItens, functions);
+    seriesController->start();
 }
 
 void MainController::launchReportsMenu() {
-    vector<string> menuItens
-            { "Por titulo", "Por canal/streaming", "Por ano", "Por nota", "Retornar"};
     unique_ptr<ReportsController> reportsController(new ReportsController(this->seriesDAO));
-    vector<void (ReportsController::*)()> functions
-            {&ReportsController::actionReportByTitle, &ReportsController::actionReportByNetwork, &ReportsController::actionReportByTitle, &ReportsController::actionReportByTitle};
-    reportsController->launchReportsActions("Menu Series", menuItens, functions);
+    reportsController->start();
 }
 
 void MainController::actionHelp() {
@@ -75,3 +68,6 @@ void MainController::actionCredits() {
     unique_ptr<TextFromFile> creditsText(new TextFromFile("credits.txt"));
     cout << creditsText->getFileContent() << endl;
 }
+
+template void MainController::launchActions<ReportsController>(string, vector<string>, vector<void (ReportsController::*)()>, ReportsController*);
+template void MainController::launchActions<SeriesController>(string, vector<string>, vector<void (SeriesController::*)()>, SeriesController*);

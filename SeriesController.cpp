@@ -5,6 +5,7 @@
 #include <iostream>
 #include "SeriesController.h"
 #include "Menu.h"
+#include "MainController.h"
 
 using namespace std;
 
@@ -54,26 +55,6 @@ void SeriesController::actionAddSeries() {
 
     this->seriesDAO->addSeries(new Series(name, releaseYear, numSeasons, episodeCount, mainActors, mainCharacters, network, rating));
 }
-
-void SeriesController::launchSeriesActions(string title, vector<string> menuItens,
-                                           vector<void (SeriesController::*)()> functions) {
-
-    try
-    {
-        Menu menu(menuItens, title, "Sua opcao: ");
-        menu.setSymbol("*");
-
-        while (int choice = menu.getChoice())
-        {
-            (this->*functions.at(choice - 1))();
-        }
-    }
-    catch (const exception &e)
-    {
-        cerr << e.what() << endl;
-    }
-}
-
 
 
 void SeriesController::actionDisplaySeries() {
@@ -211,4 +192,12 @@ void SeriesController::actionDeleteSeries() {
     }else{
         cout << "Nenhuma serie com esse nome" << endl;
     }
+}
+
+void SeriesController::start() {
+    vector<string> menuItens
+            { "Incluir novo registro", "Recuperar um registro", "Editar um registro", "Excluir um registro", "Listar todas", "Retornar"};
+    vector<void (SeriesController::*)()> functions
+            {&SeriesController::actionAddSeries, &SeriesController::actionSearchSeriesByName, &SeriesController::actionUpdateSeries, &SeriesController::actionDeleteSeries, &SeriesController::actionDisplaySeries};
+    MainController::launchActions<SeriesController>("Menu Series", menuItens, functions, this);
 }

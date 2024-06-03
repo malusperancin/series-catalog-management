@@ -10,7 +10,8 @@ private:
     ServerDBConnection* serverDbConnection;
 public:
 	void start();
-	void launchActions(string title, vector<string> menuItens, vector<void (MainController::*)()> functions);
+    template<typename ControllerClass>
+	static void launchActions(string title, vector<string> menuItens, vector<void (ControllerClass::*)()> functions, ControllerClass* controller);
     void launchSeriesMenu();
     void launchReportsMenu();
     void actionHelp();

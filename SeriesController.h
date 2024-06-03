@@ -14,7 +14,7 @@ private:
 public:
     SeriesController(AbstractSeriesDAO* seriesDAO);
     virtual ~SeriesController();
-    void launchSeriesActions(string title, vector<string> menuItens, vector<void (SeriesController::*)()> functions);
+    void start();
     void actionAddSeries();
     void actionSearchSeriesByName();
     void actionDisplaySeries();
