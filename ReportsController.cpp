@@ -18,8 +18,8 @@ void ReportsController::start(){
     vector<string> menuItens
             { "Por titulo", "Por canal/streaming", "Por ano", "Por nota", "Retornar"};
     vector<void (ReportsController::*)()> functions
-            {&ReportsController::actionReportByTitle, &ReportsController::actionReportByNetwork, &ReportsController::actionReportByTitle, &ReportsController::actionReportByTitle};
-    MainController::launchActions<ReportsController>("Menu Series", menuItens, functions, this);
+            {&ReportsController::actionReportByTitle, &ReportsController::actionReportByNetwork, &ReportsController::actionReportByYear, &ReportsController::actionReportByRating};
+    MainController::launchActions("Menu Series", menuItens, functions, this);
 }
 
 
@@ -49,6 +49,28 @@ void ReportsController::actionReportByNetwork() {
         cout << "Nao ha series nesse canal de streaming para realizar relatorio" << endl;
 }
 
-void ReportsController::reportByYear() {
+void ReportsController::actionReportByYear() {
+    int releaseYear;
+    cout << "Digite o ano de lancamento do qual deseja realizar o relatorio: " << endl;
+    cin >> releaseYear;
+    vector<Series*> series = this->seriesDAO->getSeriesByYear(releaseYear);
+    if(!series.empty())
+        for(auto serie : series){
+            cout << *serie << endl;
+        }
+    else
+        cout << "Nao ha series lancadas nesse ano para realizar relatorio" << endl;
+}
 
+void ReportsController::actionReportByRating() {
+    int rating;
+    cout << "Digite a nota da qual deseja realizar o relatorio: " << endl;
+    cin >> rating;
+    vector<Series*> series = this->seriesDAO->getSeriesByRating(rating);
+    if(!series.empty())
+        for(auto serie : series){
+            cout << *serie << endl;
+        }
+    else
+        cout << "Nao ha series com essa nota para realizar relatorio" << endl;
 }

@@ -38,6 +38,8 @@ class SeriesDBDAO final : public AbstractSeriesDAO
 		virtual Series* getSeriesById(int SeriesId);
         virtual vector<Series*> getSeriesByName(string name);
         virtual vector<Series*> getSeriesByNetwork(string network);
+        virtual vector<Series*> getSeriesByYear(int year);
+        virtual vector<Series*> getSeriesByRating(int rating);
 	};
 
 #endif /* USERDBDAO_H_ */

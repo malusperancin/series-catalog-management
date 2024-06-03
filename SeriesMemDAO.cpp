@@ -105,3 +105,41 @@ vector<Series *> SeriesMemDAO::getSeriesByNetwork(string network) {
 
     return (buffer);
 }
+
+vector<Series *> SeriesMemDAO::getSeriesByYear(int year) {
+    vector<Series*> &series = memoryDBConnection->getSeriesList();
+    vector<Series*>::iterator seriesIterator = series.begin();
+    vector<Series*> buffer;
+    bool found = false;
+
+    while ((!found) && (seriesIterator != series.end()))
+    {
+        if ((*seriesIterator)->getReleaseYear() == year)
+        {
+            found = true;
+            buffer.push_back(*seriesIterator);
+        }
+        seriesIterator++;
+    }
+
+    return (buffer);
+}
+
+vector<Series *> SeriesMemDAO::getSeriesByRating(int rating) {
+    vector<Series*> &series = memoryDBConnection->getSeriesList();
+    vector<Series*>::iterator seriesIterator = series.begin();
+    vector<Series*> buffer;
+    bool found = false;
+
+    while ((!found) && (seriesIterator != series.end()))
+    {
+        if ((*seriesIterator)->getRating() == rating)
+        {
+            found = true;
+            buffer.push_back(*seriesIterator);
+        }
+        seriesIterator++;
+    }
+
+    return (buffer);
+}

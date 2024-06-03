@@ -209,3 +209,69 @@ vector<Series *> SeriesDBDAO::getSeriesByNetwork(string network) {
     }
     return (seriesByNetwork);
 }
+
+vector<Series *> SeriesDBDAO::getSeriesByYear(int year) {
+    vector<Series*> seriesByYear;
+    try
+    {
+        unique_ptr<sql::PreparedStatement> stmnt(serverDBConnection->getConnection()->prepareStatement(SQL_getSeriesByYear));
+        stmnt->setInt(1, year);
+        sql::ResultSet *res = stmnt->executeQuery();
+
+        while (res->next())
+        {
+            int seriesId = res->getInt(1);
+            string seriesName = (res->getString(2)).c_str();
+            int releaseYear = res->getInt(3);
+            int season = res->getInt(4);
+            int episodeCount = res->getInt(5);
+            string mainActors = (res->getString(6)).c_str();
+            string mainCharacters = (res->getString(7)).c_str();
+            string network = (res->getString(8)).c_str();
+            int rating = res->getInt(9);
+
+            Series *buffer = new Series(seriesId, seriesName, releaseYear, season, episodeCount, mainActors, mainCharacters, network, rating);
+            seriesByYear.push_back(buffer);
+        }
+    }
+    catch (sql::SQLException &e)
+    {
+        cerr << "Error selecting Series: " << e.what() << endl;
+    }
+    return (seriesByYear);
+}
+
+vector<Series *> SeriesDBDAO::getSeriesByRating(int rating) {
+    vector<Series*> seriesByRating;
+    try
+    {
+        unique_ptr<sql::PreparedStatement> stmnt(serverDBConnection->getConnection()->prepareStatement(SQL_getSeriesByRating));
+        stmnt->setInt(1, rating);
+        sql::ResultSet *res = stmnt->executeQuery();
+
+        while (res->next())
+        {
+            int seriesId = res->getInt(1);
+            string seriesName = (res->getString(2)).c_str();
+            int releaseYear = res->getInt(3);
+            int season = res->getInt(4);
+            int episodeCount = res->getInt(5);
+            string mainActors = (res->getString(6)).c_str();
+            string mainCharacters = (res->getString(7)).c_str();
+            string network = (res->getString(8)).c_str();
+            int rating = res->getInt(9);
+
+            Series *buffer = new Series(seriesId, seriesName, releaseYear, season, episodeCount, mainActors, mainCharacters, network, rating);
+            seriesByRating.push_back(buffer);
+        }
+    }
+    catch (sql::SQLException &e)
+    {
+        cerr << "Error selecting Series: " << e.what() << endl;
+    }
+    return (seriesByRating);
+}
+
+
+
+

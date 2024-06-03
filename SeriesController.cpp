@@ -17,6 +17,14 @@ SeriesController::SeriesController(AbstractSeriesDAO *seriesDAO) : seriesDAO(ser
 SeriesController::~SeriesController() {
 }
 
+void SeriesController::start() {
+    vector<string> menuItens
+            { "Incluir novo registro", "Recuperar um registro", "Editar um registro", "Excluir um registro", "Listar todas", "Retornar"};
+    vector<void (SeriesController::*)()> functions
+            {&SeriesController::actionAddSeries, &SeriesController::actionSearchSeriesByName, &SeriesController::actionUpdateSeries, &SeriesController::actionDeleteSeries, &SeriesController::actionDisplaySeries};
+    MainController::launchActions("Menu Series", menuItens, functions, this);
+}
+
 void SeriesController::actionAddSeries() {
     string name;
     int releaseYear;
@@ -70,12 +78,16 @@ void SeriesController::actionDisplaySeries() {
 
 void SeriesController::actionSearchSeriesByName() {
     try {
+        cout << "Digite o nome da série que deseja recuperar: " << endl;
         string name;
         getline(cin, name);
         vector<Series*> series = this->seriesDAO->getSeriesByName(name);
         if(!series.empty()){
-            cout << "Escolha a serie que deseja consultar: " << endl;
-            int choice = this->selectSeries(series);
+            int choice = 1;
+            if(series.size() > 1) {
+                cout << "Escolha a serie que deseja consultar: " << endl;
+                choice = this->selectSeries(series);
+            }
             cout << "\nDescricao completa da serie desejada: " << endl;
             cout << *(series.at(choice-1)) << endl;
         }else{
@@ -100,13 +112,19 @@ int SeriesController::selectSeries(vector<Series *> series) {
     return choice;
 }
 
+
+// TODO: Modularizar método
 void SeriesController::actionUpdateSeries() {
     cout << "Digite o nome da serie que deseja editar: " << endl;
     string name;
     getline(cin, name);
     vector<Series*> series = this->seriesDAO->getSeriesByName(name);
     if(!series.empty()){
-        int position = this->selectSeries(series);
+        int position = 1;
+        if(series.size() > 1){
+            cout << "Escolha a serie que deseja editar: " << endl;
+            position = this->selectSeries(series);
+        }
         Series* selectedSeries = series.at(position-1);
         char choice;
         cout << "Deseja editar o nome da serie? Y/N" << endl;
@@ -169,6 +187,14 @@ void SeriesController::actionUpdateSeries() {
             getline(cin, newNetwork);
             selectedSeries->setNetwork(newNetwork);
         }
+        cout << "Deseja editar a nota da serie? Y/N" << endl;
+        cin >> choice;
+        if(choice == 'Y'){
+            int newRating;
+            cout << "Digite a nova nota da serie: " << endl;
+            cin >> newRating;
+            selectedSeries->setRating(newRating);
+        }
         this->seriesDAO->updateSeries(selectedSeries);
     }else{
         cout << "Nenhuma serie com esse nome" << endl;
@@ -194,10 +220,3 @@ void SeriesController::actionDeleteSeries() {
     }
 }
 
-void SeriesController::start() {
-    vector<string> menuItens
-            { "Incluir novo registro", "Recuperar um registro", "Editar um registro", "Excluir um registro", "Listar todas", "Retornar"};
-    vector<void (SeriesController::*)()> functions
-            {&SeriesController::actionAddSeries, &SeriesController::actionSearchSeriesByName, &SeriesController::actionUpdateSeries, &SeriesController::actionDeleteSeries, &SeriesController::actionDisplaySeries};
-    MainController::launchActions<SeriesController>("Menu Series", menuItens, functions, this);
-}

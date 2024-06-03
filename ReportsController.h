@@ -16,8 +16,8 @@ public:
     void start();
     void actionReportByTitle();
     void actionReportByNetwork();
-    void reportByYear();
-    void reportByRating();
+    void actionReportByYear();
+    void actionReportByRating();
 };
 
 

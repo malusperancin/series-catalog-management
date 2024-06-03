@@ -18,6 +18,8 @@ class AbstractSeriesDAO
 		virtual void deleteSeries(int SeriesId) = 0;
         virtual vector<Series*> getSeriesByName(string name) = 0;
         virtual vector<Series*> getSeriesByNetwork(string network) = 0;
+        virtual vector<Series*> getSeriesByYear(int year) = 0;
+        virtual vector<Series*> getSeriesByRating(int rating) = 0;
 	};
 
 #endif /* ABSTRACTSeriesDAO_H_ */
