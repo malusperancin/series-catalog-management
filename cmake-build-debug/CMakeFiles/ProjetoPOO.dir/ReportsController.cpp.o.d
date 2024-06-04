@@ -219,4 +219,5 @@ CMakeFiles/ProjetoPOO.dir/ReportsController.cpp.o: \
  /usr/include/mariadb/conncpp/Exception.hpp \
  /usr/include/mariadb/conncpp/jdbccompat.hpp \
  /usr/include/mariadb/MariaDbDataSource.hpp \
- /usr/include/mariadb/conncpp.hpp
+ /usr/include/mariadb/conncpp.hpp \
+ /home/felipe/POO\ I/series-catalog-management/MemoryDBConnection.h

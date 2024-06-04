@@ -11,6 +11,8 @@ class SeriesController {
 private:
     AbstractSeriesDAO* seriesDAO;
     int selectSeries(vector<Series*> series);
+    void editAttribute(string attribute, void (Series::*setter)(int), Series* series);
+    void editAttribute(string attribute, void (Series::*setter)(string), Series* series);
 public:
     SeriesController(AbstractSeriesDAO* seriesDAO);
     virtual ~SeriesController();

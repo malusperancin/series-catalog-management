@@ -112,90 +112,27 @@ int SeriesController::selectSeries(vector<Series *> series) {
     return choice;
 }
 
-
-// TODO: Modularizar método
 void SeriesController::actionUpdateSeries() {
     cout << "Digite o nome da serie que deseja editar: " << endl;
     string name;
     getline(cin, name);
-    vector<Series*> series = this->seriesDAO->getSeriesByName(name);
-    if(!series.empty()){
+    vector<Series *> series = this->seriesDAO->getSeriesByName(name);
+    if (!series.empty()) {
         int position = 1;
-        if(series.size() > 1){
+        if (series.size() > 1) {
             cout << "Escolha a serie que deseja editar: " << endl;
             position = this->selectSeries(series);
         }
-        Series* selectedSeries = series.at(position-1);
-        char choice;
-        cout << "Deseja editar o nome da serie? Y/N" << endl;
-        cin >> choice;
-        if(choice == 'Y'){
-            string newName;
-            cin.ignore();
-            cout << "Digite o novo nome da serie: " << endl;
-            getline(cin, newName);
-            selectedSeries->setName(newName);
-        }
-        cout << "Deseja editar o ano de lancamento da serie? Y/N" << endl;
-        cin >> choice;
-        if(choice == 'Y'){
-            int newYear;
-            cout << "Digite o novo ano de lancamento da serie: " << endl;
-            cin >> newYear;
-            selectedSeries->setReleaseYear(newYear);
-        }
-        cout << "Deseja editar o numero de temporadas da serie? Y/N" << endl;
-        cin >> choice;
-        if(choice == 'Y'){
-            int newNumSeasons;
-            cout << "Digite o novo numero de temporadas da serie: " << endl;
-            cin >> newNumSeasons;
-            selectedSeries->setNumSeasons(newNumSeasons);
-        }
-        cout << "Deseja editar o numero de episodios da serie? Y/N" << endl;
-        cin >> choice;
-        if(choice == 'Y'){
-            int newNumEpisodes;
-            cout << "Digite o novo numero de episodios da serie: " << endl;
-            cin >> newNumEpisodes;
-            selectedSeries->setEpisodeCount(newNumEpisodes);
-        }
-        cout << "Deseja editar os atores da serie? Y/N" << endl;
-        cin >> choice;
-        if(choice == 'Y'){
-            string newActors;
-            cin.ignore();
-            cout << "Digite os novos atores da serie: " << endl;
-            getline(cin, newActors);
-            selectedSeries->setMainActors(newActors);
-        }
-        cout << "Deseja editar os personagens da serie? Y/N" << endl;
-        cin >> choice;
-        if(choice == 'Y'){
-            string newCharacters;
-            cout << "Digite os novos personagens da serie: " << endl;
-            cin.ignore();
-            getline(cin, newCharacters);
-            selectedSeries->setMainCharacters(newCharacters);
-        }
-        cout << "Deseja editar o canal de streaming da serie? Y/N" << endl;
-        cin >> choice;
-        if(choice == 'Y'){
-            string newNetwork;
-            cout << "Digite o novo canal de streaming da serie: " << endl;
-            cin.ignore();
-            getline(cin, newNetwork);
-            selectedSeries->setNetwork(newNetwork);
-        }
-        cout << "Deseja editar a nota da serie? Y/N" << endl;
-        cin >> choice;
-        if(choice == 'Y'){
-            int newRating;
-            cout << "Digite a nova nota da serie: " << endl;
-            cin >> newRating;
-            selectedSeries->setRating(newRating);
-        }
-        this->seriesDAO->updateSeries(selectedSeries);
+        Series *selectedSeries = series.at(position - 1);
+        editAttribute("nome", &Series::setName, selectedSeries);
+        editAttribute("ano de lancamento", &Series::setReleaseYear, selectedSeries);
+        editAttribute("numero de temporadas", &Series::setNumSeasons, selectedSeries);
+        editAttribute("numero de episodios", &Series::setEpisodeCount, selectedSeries);
+        editAttribute("personagens principais", &Series::setMainCharacters, selectedSeries);
+        editAttribute("atores principais", &Series::setMainActors, selectedSeries);
+        editAttribute("canal de streaming", &Series::setNetwork, selectedSeries);
+        editAttribute("nota", &Series::setRating, selectedSeries);
+
     }else{
         cout << "Nenhuma serie com esse nome" << endl;
     }
@@ -217,6 +154,31 @@ void SeriesController::actionDeleteSeries() {
             this->seriesDAO->deleteSeries(selectedSeries->getId());
     }else{
         cout << "Nenhuma serie com esse nome" << endl;
+    }
+}
+
+void SeriesController::editAttribute(string attribute, void (Series::*setter)(int), Series *series) {
+    char choice;
+    cout << "Deseja editar o/a " << attribute << " da serie? Y/N" << endl;
+    cin >> choice;
+    if(choice == 'Y'){
+        int newAttribute;
+        cout << "Digite o/a novo/a " << attribute << " da serie: " << endl;
+        cin >> newAttribute;
+        (series->*setter)(newAttribute);
+    }
+}
+
+void SeriesController::editAttribute(string attribute, void (Series::*setter)(string), Series *series) {
+    char choice;
+    cout << "Deseja editar o/a " << attribute << " da serie? Y/N" << endl;
+    cin >> choice;
+    if(choice == 'Y'){
+        string newAttribute;
+        cout << "Digite o/a novo/a " << attribute << " da serie: " << endl;
+        cin >> ws;
+        getline(cin, newAttribute);
+        (series->*setter)(newAttribute);
     }
 }
 

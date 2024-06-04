@@ -852,6 +852,7 @@ CMakeFiles/ProjetoPOO.dir/Menu.cpp.o: /home/felipe/POO\ I/series-catalog-managem
 CMakeFiles/ProjetoPOO.dir/ReportsController.cpp.o: /home/felipe/POO\ I/series-catalog-management/ReportsController.cpp \
   /home/felipe/POO\ I/series-catalog-management/AbstractSeriesDAO.h \
   /home/felipe/POO\ I/series-catalog-management/MainController.h \
+  /home/felipe/POO\ I/series-catalog-management/MemoryDBConnection.h \
   /home/felipe/POO\ I/series-catalog-management/Menu.h \
   /home/felipe/POO\ I/series-catalog-management/ReportsController.h \
   /home/felipe/POO\ I/series-catalog-management/Series.h \
@@ -1298,6 +1299,7 @@ CMakeFiles/ProjetoPOO.dir/Series.cpp.o: /home/felipe/POO\ I/series-catalog-manag
 CMakeFiles/ProjetoPOO.dir/SeriesController.cpp.o: /home/felipe/POO\ I/series-catalog-management/SeriesController.cpp \
   /home/felipe/POO\ I/series-catalog-management/AbstractSeriesDAO.h \
   /home/felipe/POO\ I/series-catalog-management/MainController.h \
+  /home/felipe/POO\ I/series-catalog-management/MemoryDBConnection.h \
   /home/felipe/POO\ I/series-catalog-management/Menu.h \
   /home/felipe/POO\ I/series-catalog-management/Series.h \
   /home/felipe/POO\ I/series-catalog-management/SeriesController.h \
@@ -2446,6 +2448,7 @@ CMakeFiles/ProjetoPOO.dir/TextFromFile.cpp.o: /home/felipe/POO\ I/series-catalog
 CMakeFiles/ProjetoPOO.dir/main.cpp.o: /home/felipe/POO\ I/series-catalog-management/main.cpp \
   /home/felipe/POO\ I/series-catalog-management/AbstractSeriesDAO.h \
   /home/felipe/POO\ I/series-catalog-management/MainController.h \
+  /home/felipe/POO\ I/series-catalog-management/MemoryDBConnection.h \
   /home/felipe/POO\ I/series-catalog-management/Series.h \
   /home/felipe/POO\ I/series-catalog-management/ServerDBConnection.h \
   /usr/include/alloca.h \

@@ -9,6 +9,20 @@
 #include "SeriesController.h"
 #include "ReportsController.h"
 
+MainController::MainController() {
+
+}
+
+
+MainController::~MainController() {
+    delete this->serverDbConnection;
+    serverDbConnection = nullptr;
+    delete this->seriesDAO;
+    seriesDAO = nullptr;
+    delete memoryDbConnection;
+    memoryDbConnection = nullptr;
+}
+
 void MainController::start() {
     this->serverDbConnection = nullptr;
     this->seriesDAO = nullptr;
@@ -18,13 +32,14 @@ void MainController::start() {
     }
     catch (const sql::SQLException& e){
         cerr << "Ooops... we got an error trying to connect with the database. The system is now working with local memory \n" << e.what() << endl;
-        this->seriesDAO = new SeriesMemDAO(new MemoryDBConnection());
+        this->memoryDbConnection = new MemoryDBConnection();
+        this->seriesDAO = new SeriesMemDAO(this->memoryDbConnection);
     }
 	vector<string> menuItens
 		{ "Series", "Relatorios", "Ajuda", "Creditos", "Sair"};
 	vector<void (MainController::*)()> functions
 		{&MainController::launchSeriesMenu, &MainController::launchReportsMenu, &MainController::actionHelp, &MainController::actionCredits };
-	launchActions<MainController>("Main Menu", menuItens, functions, this);
+	launchActions<MainController>("Menu Principal", menuItens, functions, this);
 }
 
 template<typename ControllerClass>
@@ -68,6 +83,8 @@ void MainController::actionCredits() {
     unique_ptr<TextFromFile> creditsText(new TextFromFile("credits.txt"));
     cout << creditsText->getFileContent() << endl;
 }
+
+
 
 template void MainController::launchActions<ReportsController>(string, vector<string>, vector<void (ReportsController::*)()>, ReportsController*);
 template void MainController::launchActions<SeriesController>(string, vector<string>, vector<void (SeriesController::*)()>, SeriesController*);
