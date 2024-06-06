@@ -10,14 +10,14 @@
 class ReportsController {
 private:
     AbstractSeriesDAO* seriesDAO;
-public:
-    ReportsController(AbstractSeriesDAO* seriesDAO);
-    virtual ~ReportsController();
-    void start();
     void actionReportByTitle();
     void actionReportByNetwork();
     void actionReportByYear();
     void actionReportByRating();
+public:
+    ReportsController(AbstractSeriesDAO* seriesDAO);
+    virtual ~ReportsController();
+    void start();
 };
 
 

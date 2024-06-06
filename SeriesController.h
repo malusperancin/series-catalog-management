@@ -13,15 +13,15 @@ private:
     int selectSeries(vector<Series*> series);
     void editAttribute(string attribute, void (Series::*setter)(int), Series* series);
     void editAttribute(string attribute, void (Series::*setter)(string), Series* series);
-public:
-    SeriesController(AbstractSeriesDAO* seriesDAO);
-    virtual ~SeriesController();
-    void start();
     void actionAddSeries();
     void actionSearchSeriesByName();
     void actionDisplaySeries();
     void actionUpdateSeries();
     void actionDeleteSeries();
+public:
+    SeriesController(AbstractSeriesDAO* seriesDAO);
+    virtual ~SeriesController();
+    void start();
 };
 
 

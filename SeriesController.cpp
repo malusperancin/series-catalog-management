@@ -66,14 +66,19 @@ void SeriesController::actionAddSeries() {
 
 
 void SeriesController::actionDisplaySeries() {
-    vector<Series*> series = this->seriesDAO->getAllSeries();
-    if(!series.empty()){
-        for (auto* serie : series){
-            cout << *serie << endl;
+    try {
+        vector<Series*> series = this->seriesDAO->getAllSeries();
+        if(!series.empty()){
+            for (auto* serie : series){
+                cout << *serie << endl;
+            }
         }
+        else
+            cout << "Nenhuma serie cadastrada" << endl;
     }
-    else
-        cout << "Nenhuma serie cadastrada" << endl;
+    catch (const exception& e){
+        cerr << "Error getting series: " << e.what() << endl;
+    }
 }
 
 void SeriesController::actionSearchSeriesByName() {
