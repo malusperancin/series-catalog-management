@@ -14,6 +14,7 @@ private:
     void actionReportByNetwork();
     void actionReportByYear();
     void actionReportByRating();
+    void printReport(string title, vector<Series*> series);
 public:
     ReportsController(AbstractSeriesDAO* seriesDAO);
     virtual ~ReportsController();

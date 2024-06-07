@@ -35,6 +35,7 @@ const int Menu::getChoice()
 		if (repeatList || firstTime)
 			{
 			unsigned long index = 0;
+            cout << endl;
 			cout << decorator << endl;
 			cout << title << endl;
 			cout << decorator << endl;

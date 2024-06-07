@@ -13,14 +13,13 @@ MainController::MainController() {
 
 }
 
-
 MainController::~MainController() {
-    delete this->serverDbConnection;
     serverDbConnection = nullptr;
-    delete this->seriesDAO;
+    delete this->serverDbConnection;
     seriesDAO = nullptr;
-    delete memoryDbConnection;
+    delete this->seriesDAO;
     memoryDbConnection = nullptr;
+    delete memoryDbConnection;
 }
 
 void MainController::start() {
@@ -35,11 +34,15 @@ void MainController::start() {
         this->memoryDbConnection = new MemoryDBConnection();
         this->seriesDAO = new SeriesMemDAO(this->memoryDbConnection);
     }
+    catch(const exception& e){
+        cerr << "Ooops... we got an unexpected error" << endl << e.what() << endl;
+    }
 	vector<string> menuItens
 		{ "Series", "Relatorios", "Ajuda", "Creditos", "Sair"};
 	vector<void (MainController::*)()> functions
-		{&MainController::launchSeriesMenu, &MainController::launchReportsMenu, &MainController::actionHelp, &MainController::actionCredits };
-	launchActions<MainController>("Menu Principal", menuItens, functions, this);
+		{&MainController::launchSeriesMenu, &MainController::launchReportsMenu, &MainController::actionHelp,
+         &MainController::actionCredits };
+	MainController::launchActions<MainController>("Menu Principal", menuItens, functions, this);
 }
 
 template<typename ControllerClass>

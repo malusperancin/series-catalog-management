@@ -9,7 +9,6 @@
 
 using namespace std;
 
-
 SeriesController::SeriesController(AbstractSeriesDAO *seriesDAO) : seriesDAO(seriesDAO){
 
 }
@@ -19,9 +18,11 @@ SeriesController::~SeriesController() {
 
 void SeriesController::start() {
     vector<string> menuItens
-            { "Incluir novo registro", "Recuperar um registro", "Editar um registro", "Excluir um registro", "Listar todas", "Retornar"};
+            { "Incluir novo registro", "Recuperar um registro", "Editar um registro", "Excluir um registro",
+              "Listar todas", "Retornar"};
     vector<void (SeriesController::*)()> functions
-            {&SeriesController::actionAddSeries, &SeriesController::actionSearchSeriesByName, &SeriesController::actionUpdateSeries, &SeriesController::actionDeleteSeries, &SeriesController::actionDisplaySeries};
+            {&SeriesController::actionAddSeries, &SeriesController::actionSearchSeriesByName,
+             &SeriesController::actionUpdateSeries, &SeriesController::actionDeleteSeries, &SeriesController::actionDisplaySeries};
     MainController::launchActions("Menu Series", menuItens, functions, this);
 }
 
@@ -34,6 +35,8 @@ void SeriesController::actionAddSeries() {
     string mainCharacters;
     string network;
     int rating;
+
+    cout << "\nADICIONANDO NOVA SERIE\n" << endl;
 
     cout << "Digite o nome da serie: ";
     getline(cin, name);
@@ -61,27 +64,12 @@ void SeriesController::actionAddSeries() {
     cout << "Digite a nota de classificacao (0-10): ";
     cin >> rating;
 
-    this->seriesDAO->addSeries(new Series(name, releaseYear, numSeasons, episodeCount, mainActors, mainCharacters, network, rating));
-}
-
-
-void SeriesController::actionDisplaySeries() {
-    try {
-        vector<Series*> series = this->seriesDAO->getAllSeries();
-        if(!series.empty()){
-            for (auto* serie : series){
-                cout << *serie << endl;
-            }
-        }
-        else
-            cout << "Nenhuma serie cadastrada" << endl;
-    }
-    catch (const exception& e){
-        cerr << "Error getting series: " << e.what() << endl;
-    }
+    this->seriesDAO->addSeries(new Series(name, releaseYear, numSeasons, episodeCount, mainActors, mainCharacters,
+                                          network, rating));
 }
 
 void SeriesController::actionSearchSeriesByName() {
+    cout << "\nRECUPERANDO UMA SERIE\n" << endl;
     try {
         cout << "Digite o nome da série que deseja recuperar: " << endl;
         string name;
@@ -104,20 +92,8 @@ void SeriesController::actionSearchSeriesByName() {
     }
 }
 
-int SeriesController::selectSeries(vector<Series *> series) {
-    int i = 1;
-    for(auto serie : series){
-        cout << i << " - " << serie->toShortString() << endl;
-        i++;
-    }
-    int choice = 0;
-    do{
-        cin >> choice;
-    } while(choice < 0 && choice <= i);
-    return choice;
-}
-
 void SeriesController::actionUpdateSeries() {
+    cout << "\nEDITANDO UMA SERIE\n" << endl;
     cout << "Digite o nome da serie que deseja editar: " << endl;
     string name;
     getline(cin, name);
@@ -137,19 +113,24 @@ void SeriesController::actionUpdateSeries() {
         editAttribute("atores principais", &Series::setMainActors, selectedSeries);
         editAttribute("canal de streaming", &Series::setNetwork, selectedSeries);
         editAttribute("nota", &Series::setRating, selectedSeries);
-
+        this->seriesDAO->updateSeries(selectedSeries);
     }else{
         cout << "Nenhuma serie com esse nome" << endl;
     }
 }
 
 void SeriesController::actionDeleteSeries() {
+    cout << "\nDELETANDO SERIE\n" << endl;
     cout << "Digite o nome da serie que deseja deletar: " << endl;
     string name;
     getline(cin, name);
     vector<Series*> series = this->seriesDAO->getSeriesByName(name);
     if(!series.empty()){
-        int position = this->selectSeries(series);
+        int position = 1;
+        if (series.size() > 1) {
+            cout << "Escolha a serie que deseja deletar: " << endl;
+            position = this->selectSeries(series);
+        }
         Series* selectedSeries = series.at(position-1);
         cout << "Realmente deseja deletar a serie a seguir? Y/N" << endl;
         cout << *selectedSeries << endl;
@@ -160,6 +141,36 @@ void SeriesController::actionDeleteSeries() {
     }else{
         cout << "Nenhuma serie com esse nome" << endl;
     }
+}
+
+void SeriesController::actionDisplaySeries() {
+    cout << "\nMOSTRANDO TODAS AS SERIES CADASTRADAS\n" << endl;
+    try {
+        vector<Series*> series = this->seriesDAO->getAllSeries();
+        if(!series.empty()){
+            for (auto* serie : series){
+                cout << *serie << endl;
+            }
+        }
+        else
+            cout << "Nenhuma serie cadastrada" << endl;
+    }
+    catch (const exception& e){
+        cerr << "Error getting series: " << e.what() << endl;
+    }
+}
+
+int SeriesController::selectSeries(vector<Series *> series) {
+    int i = 1;
+    for(auto serie : series){
+        cout << i << " - " << serie->toShortString() << endl;
+        i++;
+    }
+    int choice = 0;
+    do{
+        cin >> choice;
+    } while(choice < 0 && choice <= i);
+    return choice;
 }
 
 void SeriesController::editAttribute(string attribute, void (Series::*setter)(int), Series *series) {

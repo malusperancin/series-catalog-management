@@ -18,7 +18,8 @@ void ReportsController::start(){
     vector<string> menuItens
             { "Por titulo", "Por canal/streaming", "Por ano", "Por nota", "Retornar"};
     vector<void (ReportsController::*)()> functions
-            {&ReportsController::actionReportByTitle, &ReportsController::actionReportByNetwork, &ReportsController::actionReportByYear, &ReportsController::actionReportByRating};
+            {&ReportsController::actionReportByTitle, &ReportsController::actionReportByNetwork,
+             &ReportsController::actionReportByYear, &ReportsController::actionReportByRating};
     MainController::launchActions("Menu Series", menuItens, functions, this);
 }
 
@@ -29,9 +30,7 @@ void ReportsController::actionReportByTitle() {
     getline(cin, title);
     vector<Series*> series = this->seriesDAO->getSeriesByName(title);
     if(!series.empty())
-        for(auto serie : series){
-            cout << *serie << endl;
-        }
+        printReport("Titulo", series);
     else
         cout << "Nao ha series com esse titulo para realizar relatorio" << endl;
 }
@@ -42,9 +41,7 @@ void ReportsController::actionReportByNetwork() {
     getline(cin, network);
     vector<Series*> series = this->seriesDAO->getSeriesByNetwork(network);
     if(!series.empty())
-        for(auto serie : series){
-            cout << *serie << endl;
-        }
+        printReport("Canal/Streaming", series);
     else
         cout << "Nao ha series nesse canal de streaming para realizar relatorio" << endl;
 }
@@ -55,9 +52,7 @@ void ReportsController::actionReportByYear() {
     cin >> releaseYear;
     vector<Series*> series = this->seriesDAO->getSeriesByYear(releaseYear);
     if(!series.empty())
-        for(auto serie : series){
-            cout << *serie << endl;
-        }
+        printReport("Ano de Lancamento", series);
     else
         cout << "Nao ha series lancadas nesse ano para realizar relatorio" << endl;
 }
@@ -68,9 +63,22 @@ void ReportsController::actionReportByRating() {
     cin >> rating;
     vector<Series*> series = this->seriesDAO->getSeriesByRating(rating);
     if(!series.empty())
-        for(auto serie : series){
-            cout << *serie << endl;
-        }
+        printReport("Nota", series);
     else
         cout << "Nao ha series com essa nota para realizar relatorio" << endl;
+}
+
+void ReportsController::printReport(string title, vector<Series*> series) {
+     int width = title.length() + 14;
+     cout << endl;
+     for(int i = 0; i < width; i++)
+         cout << "*";
+     cout << endl;
+     cout << "Relatorio por " << title << endl;
+     for(int i = 0; i < width; i++)
+         cout << "*";
+     cout << endl;
+    for(auto item : series)
+        cout << *item << endl;
+    cout << endl;
 }
